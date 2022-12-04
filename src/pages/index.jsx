@@ -18,6 +18,7 @@ export async function getServerSideProps(context) {
       .then((res) => res.json())
       .then((res) => res.data.search.edges);
     sponsorables = response.filter((user) => user.node.viewerCanSponsor);
+    console.log(sponsorables);
   } catch (error) {
     console.error(error);
   }
