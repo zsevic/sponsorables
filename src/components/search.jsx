@@ -66,16 +66,26 @@ export default function SearchBar() {
               key={sponsorable.username}
               className="mx-auto w-75 my-2 border"
             >
-              <h5 className="mb-1">
+              <h5>{sponsorable.username}</h5>
+              <p className="mb-1 text-muted">{sponsorable.bio}</p>
+              <h6 className="mb-1">
                 <a
-                  href={sponsorable.url}
+                  href={`https://github.com/sponsors/${sponsorable.username}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {sponsorable.username}
+                  sponsors page
                 </a>
-              </h5>
-              <p className="mb-1 text-muted">{sponsorable.bio}</p>
+              </h6>
+              <h6 className="mb-1">
+                <a
+                  href={`https://github.com/${sponsorable.username}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  profile page
+                </a>
+              </h6>
             </ListGroup.Item>
           ))
         ) : (

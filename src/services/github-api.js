@@ -17,7 +17,6 @@ export async function getSponsorables(location) {
       .map((user) => ({
         bio: user.node.bio,
         username: user.node.login,
-        url: `https://github.com/${user.node.login}`,
       }));
   } catch (error) {
     console.error(error);
