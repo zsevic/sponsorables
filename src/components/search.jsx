@@ -6,24 +6,24 @@ export default function SearchBar() {
   const [location, setLocation] = useState();
   const [errorMessage, setErrorMessage] = useState();
   const [showResponseText, setShowResponseText] = useState(false);
-  const locationErrorMessage = 'Location is required';
+  const locationErrorMessage = "Location is required";
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      setErrorMessage('');
+      setErrorMessage("");
       setShowResponseText(false);
       if (location.length === 0) {
         setErrorMessage(locationErrorMessage);
         setShowResponseText(true);
         return;
       }
-      const response = await fetch(`/api/sponsorables?location=${location}`).then(
-        (res) => res.json()
-      );
+      const response = await fetch(
+        `/api/sponsorables?location=${location}`
+      ).then((res) => res.json());
       setSponsorables(response.data);
     } catch (error) {
       console.error(error);
-      setErrorMessage('Failed to fetch the results');
+      setErrorMessage("Failed to fetch the results");
       setShowResponseText(true);
     }
   };
@@ -37,9 +37,9 @@ export default function SearchBar() {
       return;
     }
     setShowResponseText(false);
-    setErrorMessage('');
+    setErrorMessage("");
     setLocation(locationValue);
-  }
+  };
 
   return (
     <>
@@ -62,13 +62,18 @@ export default function SearchBar() {
           sponsorables.map((sponsorable) => (
             <ListGroup.Item
               key={sponsorable.username}
-              className="mx-auto my-2 border"
+              className="mx-auto w-75 my-2 border"
             >
-              <a href={sponsorable.url}>{sponsorable.username}</a>
+              <h5 className="mb-1">
+                <a href={sponsorable.url}>{sponsorable.username}</a>
+              </h5>
+              <p className="mb-1 text-muted">{sponsorable.bio}</p>
             </ListGroup.Item>
           ))
         ) : (
-          <p className="mx-auto">{showResponseText ? (errorMessage ? errorMessage : 'There are no results') : ''}</p>
+          <p className="mx-auto">
+            {showResponseText ? errorMessage || "There are no results" : ""}
+          </p>
         )}
       </ListGroup>
     </>
