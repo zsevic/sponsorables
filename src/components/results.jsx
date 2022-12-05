@@ -15,10 +15,10 @@ export function Results({ sponsorables }) {
             sm={6}
             xs={12}
             key={sponsorable.username}
-            className="p-2 my-2 border"
+            className="p-2 m-1 border"
           >
             <h5>{sponsorable.username}</h5>
-            <p className="mb-1 text-muted">{sponsorable.bio}</p>
+            <p className="mb-1 text-muted" style={{wordWrap:"break-word"}}>{sponsorable.bio}</p>
             <h6 className="mb-1">
               <a
                 href={`https://github.com/sponsors/${sponsorable.username}`}
