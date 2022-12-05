@@ -33,8 +33,8 @@ export default function SearchBar() {
       <ListGroup>
         {sponsorables.length > 0 ? (
           sponsorables.map((sponsorable) => (
-            <ListGroup.Item key={sponsorable.username}>
-              {sponsorable.url}
+            <ListGroup.Item key={sponsorable.username} className="mx-auto my-2 border">
+              <a href={sponsorable.url}>{sponsorable.username}</a>
             </ListGroup.Item>
           ))
         ) : (
