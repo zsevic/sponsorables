@@ -67,7 +67,13 @@ export default function SearchBar() {
               className="mx-auto w-75 my-2 border"
             >
               <h5 className="mb-1">
-                <a href={sponsorable.url}>{sponsorable.username}</a>
+                <a
+                  href={sponsorable.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {sponsorable.username}
+                </a>
               </h5>
               <p className="mb-1 text-muted">{sponsorable.bio}</p>
             </ListGroup.Item>
