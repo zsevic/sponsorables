@@ -44,7 +44,7 @@ export default function SearchBar() {
   return (
     <>
       <Form className="mb-3 mt-4 p-2 w-75 mx-auto" onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Control
             placeholder="Enter the location"
             onChange={handleLocationChange}
