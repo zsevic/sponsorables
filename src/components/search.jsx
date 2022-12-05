@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Form, ListGroup } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+import { Results } from "./results";
 
 export default function SearchBar() {
   const [sponsorables, setSponsorables] = useState([]);
@@ -59,41 +60,10 @@ export default function SearchBar() {
         </div>
       </Form>
 
-      <ListGroup className="mb-3">
-        {sponsorables.length > 0 ? (
-          sponsorables.map((sponsorable) => (
-            <ListGroup.Item
-              key={sponsorable.username}
-              className="mx-auto w-75 my-2 border"
-            >
-              <h5>{sponsorable.username}</h5>
-              <p className="mb-1 text-muted">{sponsorable.bio}</p>
-              <h6 className="mb-1">
-                <a
-                  href={`https://github.com/sponsors/${sponsorable.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  sponsors page
-                </a>
-              </h6>
-              <h6 className="mb-1">
-                <a
-                  href={`https://github.com/${sponsorable.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  profile page
-                </a>
-              </h6>
-            </ListGroup.Item>
-          ))
-        ) : (
-          <p className="mx-auto">
-            {showResponseText ? errorMessage || "There are no results" : ""}
-          </p>
-        )}
-      </ListGroup>
+      <Results sponsorables={sponsorables} />
+      <p className="text-center">
+        {showResponseText ? errorMessage || "There are no results" : ""}
+      </p>
     </>
   );
 }
