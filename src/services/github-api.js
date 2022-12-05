@@ -16,6 +16,7 @@ export async function getSponsorables(location) {
       .filter((user) => user.node.viewerCanSponsor)
       .map((user) => ({
         bio: user.node.bio,
+        username: user.node.login,
         url: `https://github.com/${user.node.login}`,
       }));
   } catch (error) {
