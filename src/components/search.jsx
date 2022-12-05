@@ -12,9 +12,10 @@ export default function SearchBar() {
     try {
       setErrorMessage('');
       setShowResponseText(false);
-      if (!location) {
+      if (location.length === 0) {
+        setErrorMessage(locationErrorMessage);
         setShowResponseText(true);
-        return setErrorMessage(locationErrorMessage);
+        return;
       }
       const response = await fetch(`/api/sponsorables?location=${location}`).then(
         (res) => res.json()
@@ -30,8 +31,9 @@ export default function SearchBar() {
   const handleLocationChange = (event) => {
     const locationValue = event.target.value;
     if (locationValue.length === 0) {
-      setShowResponseText(true);
+      setLocation(locationValue);
       setErrorMessage(locationErrorMessage);
+      setShowResponseText(true);
       return;
     }
     setShowResponseText(false);
