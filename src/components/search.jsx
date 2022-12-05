@@ -52,9 +52,11 @@ export default function SearchBar() {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="mx-auto">
-          Search
-        </Button>
+        <div className="d-flex">
+          <Button variant="primary" type="submit" className="mx-auto">
+            Search
+          </Button>
+        </div>
       </Form>
 
       <ListGroup>
