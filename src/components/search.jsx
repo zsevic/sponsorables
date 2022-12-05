@@ -4,15 +4,40 @@ import { Button, Form, ListGroup } from "react-bootstrap";
 export default function SearchBar() {
   const [sponsorables, setSponsorables] = useState([]);
   const [location, setLocation] = useState();
+  const [errorMessage, setErrorMessage] = useState();
+  const [showResponseText, setShowResponseText] = useState(false);
+  const locationErrorMessage = 'Location is required';
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(`/api/sponsorables?location=${location}`).then(
-      (res) => res.json()
-    );
-    setSponsorables(response.data);
+    try {
+      setErrorMessage('');
+      setShowResponseText(false);
+      if (!location) {
+        setShowResponseText(true);
+        return setErrorMessage(locationErrorMessage);
+      }
+      const response = await fetch(`/api/sponsorables?location=${location}`).then(
+        (res) => res.json()
+      );
+      setSponsorables(response.data);
+    } catch (error) {
+      console.error(error);
+      setErrorMessage('Failed to fetch the results');
+      setShowResponseText(true);
+    }
   };
 
-  const handleLocationChange = (event) => setLocation(event.target.value);
+  const handleLocationChange = (event) => {
+    const locationValue = event.target.value;
+    if (locationValue.length === 0) {
+      setShowResponseText(true);
+      setErrorMessage(locationErrorMessage);
+      return;
+    }
+    setShowResponseText(false);
+    setErrorMessage('');
+    setLocation(locationValue);
+  }
 
   return (
     <>
@@ -41,7 +66,7 @@ export default function SearchBar() {
             </ListGroup.Item>
           ))
         ) : (
-          <p className="mx-auto">There are no results</p>
+          <p className="mx-auto">{showResponseText ? (errorMessage ? errorMessage : 'There are no results') : ''}</p>
         )}
       </ListGroup>
     </>
