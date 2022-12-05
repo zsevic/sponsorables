@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>next-starter</title>
+        <title>sponsorables</title>
         <link rel="icon" href="./favicon.ico" />
       </Head>
       Hello world

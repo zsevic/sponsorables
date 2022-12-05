@@ -1,12 +1,12 @@
-# next-starter
+# sponsorables
 
-> Minimal Next.js boilerplate
+> Search Github sponsorables by location
 
 ### Setup
 
 ```bash
-git clone https://github.com/zsevic/next-starter
-cd next-starter
+git clone https://github.com/zsevic/sponsorables
+cd sponsorables
 cp .env.sample .env.local # change values after copying
 npm i
 npm run dev
