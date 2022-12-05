@@ -18,7 +18,8 @@ export default async function handler(req, res) {
     sponsorables = response
       .filter((user) => user.node.viewerCanSponsor)
       .map((user) => ({
-        username: user.node.login,
+        bio: user.node.bio,
+        url: `https://github.com/${user.node.login}`,
       }));
   } catch (error) {
     console.error(error);
