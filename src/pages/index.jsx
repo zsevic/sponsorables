@@ -1,17 +1,17 @@
-import Head from 'next/head';
-import React from 'react';
+import Head from "next/head";
+import React from "react";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   let sponsorables = [];
   try {
-    const response = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
       body: JSON.stringify({
         query:
           'query { search(type:USER, query:"location:serbia followers:>40", first:100) { edges { node { ... on User { bio login viewerCanSponsor } } } userCount } }',
       }),
       headers: {
-        ContentType: 'application/json',
+        ContentType: "application/json",
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
     })
@@ -33,7 +33,7 @@ export default function Home() {
     <div>
       <Head>
         <title>next-starter</title>
-        <link rel='icon' href='./favicon.ico' />
+        <link rel="icon" href="./favicon.ico" />
       </Head>
       Hello world
     </div>
