@@ -59,7 +59,7 @@ export default function SearchBar() {
         </div>
       </Form>
 
-      <ListGroup>
+      <ListGroup className="mb-3">
         {sponsorables.length > 0 ? (
           sponsorables.map((sponsorable) => (
             <ListGroup.Item
