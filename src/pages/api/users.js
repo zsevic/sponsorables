@@ -3,18 +3,18 @@ export default async function handler(req, res) {
   let sponsorables = [];
 
   try {
-    const response = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
       body: JSON.stringify({
         query: `query { search(type:USER, query:"location:${location} followers:>40", first:100) { edges { node { ... on User { bio login viewerCanSponsor } } } userCount } }`,
       }),
       headers: {
-        ContentType: 'application/json',
+        ContentType: "application/json",
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
     })
-      .then((res) => res.json())
-      .then((res) => res.data.search.edges);
+      .then((resp) => resp.json())
+      .then((resp) => resp.data.search.edges);
     sponsorables = response
       .filter((user) => user.node.viewerCanSponsor)
       .map((user) => ({
