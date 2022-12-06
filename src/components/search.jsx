@@ -74,12 +74,12 @@ export function SearchBar() {
       </Form>
 
       {isLoading && <Loader />}
-      {!isLoading && <Results sponsorables={sponsorables} />}
       {!isLoading && (
         <p className="text-center">
           {showResponseText ? errorMessage || "There are no results" : ""}
         </p>
       )}
+      {!isLoading && <Results sponsorables={sponsorables} />}
     </>
   );
 }
