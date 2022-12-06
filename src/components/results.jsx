@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 export function Results({ sponsorables }) {
   if (sponsorables.length === 0) return null;
@@ -15,28 +15,36 @@ export function Results({ sponsorables }) {
             sm={6}
             xs={12}
             key={sponsorable.username}
-            className="p-2 m-1 border"
+            className="mb-3"
           >
-            <h5>{sponsorable.username}</h5>
-            <p className="mb-1 text-muted text-break">{sponsorable.bio}</p>
-            <h6 className="mb-1">
-              <a
-                href={`https://github.com/sponsors/${sponsorable.username}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                sponsors page
-              </a>
-            </h6>
-            <h6 className="mb-1">
-              <a
-                href={`https://github.com/${sponsorable.username}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                profile page
-              </a>
-            </h6>
+            <Card className="p-2">
+              <Card.Header>{sponsorable.username}</Card.Header>
+              <Card.Body>
+                <Card.Text className="text-muted text-break">
+                  {sponsorable.bio}
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <h6 className="mb-1">
+                  <a
+                    href={`https://github.com/sponsors/${sponsorable.username}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    sponsors page
+                  </a>
+                </h6>
+                <h6 className="mb-1">
+                  <a
+                    href={`https://github.com/${sponsorable.username}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    profile page
+                  </a>
+                </h6>
+              </Card.Footer>
+            </Card>
           </Col>
         ))}
       </Row>
