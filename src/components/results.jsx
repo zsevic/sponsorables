@@ -17,7 +17,7 @@ export function Results({ sponsorables }) {
             key={sponsorable.username}
             className="mb-3 d-flex"
           >
-            <Card className="p-2">
+            <Card className="p-2 w-100">
               <Card.Header as="h5">{sponsorable.username}</Card.Header>
               <Card.Body>
                 <Card.Text className="text-muted text-break">
