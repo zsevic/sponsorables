@@ -28,14 +28,14 @@ export function Results({ sponsorables }) {
               )}
               <Card.Footer>
                 <Row>
-                  <Col xs={6} className="text-center">
+                  <Col xs={12} className="text-center text-wrap mb-2">
                     <Card.Link
                       href={`https://github.com/sponsors/${sponsorable.username}`}
                     >
                       sponsors page
                     </Card.Link>
                   </Col>
-                  <Col xs={6} className="text-center">
+                  <Col xs={12} className="text-center">
                     <Card.Link
                       href={`https://github.com/${sponsorable.username}`}
                     >
