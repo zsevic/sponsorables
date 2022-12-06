@@ -30,6 +30,8 @@ export function Results({ sponsorables }) {
                 <Row>
                   <Col xs={12} className="text-center text-wrap mb-2">
                     <Card.Link
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={`https://github.com/sponsors/${sponsorable.username}`}
                     >
                       sponsors page
@@ -37,9 +39,11 @@ export function Results({ sponsorables }) {
                   </Col>
                   <Col xs={12} className="text-center">
                     <Card.Link
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={`https://github.com/${sponsorable.username}`}
                     >
-                      profile page
+                      profile
                     </Card.Link>
                   </Col>
                 </Row>
