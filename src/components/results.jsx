@@ -19,11 +19,13 @@ export function Results({ sponsorables }) {
           >
             <Card className="p-2 w-100">
               <Card.Header as="h5">{sponsorable.username}</Card.Header>
-              <Card.Body>
-                <Card.Text className="text-muted text-break">
-                  {sponsorable.bio}
-                </Card.Text>
-              </Card.Body>
+              {sponsorable.bio && (
+                <Card.Body>
+                  <Card.Text className="text-muted text-break">
+                    {sponsorable.bio}
+                  </Card.Text>
+                </Card.Body>
+              )}
               <Card.Footer>
                 <Card.Link
                   href={`https://github.com/sponsors/${sponsorable.username}`}
@@ -31,7 +33,7 @@ export function Results({ sponsorables }) {
                   sponsors page
                 </Card.Link>
                 <Card.Link href={`https://github.com/${sponsorable.username}`}>
-                  profile page
+                  profile
                 </Card.Link>
               </Card.Footer>
             </Card>
