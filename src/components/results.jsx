@@ -25,24 +25,14 @@ export function Results({ sponsorables }) {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <h6 className="mb-1">
-                  <a
-                    href={`https://github.com/sponsors/${sponsorable.username}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    sponsors page
-                  </a>
-                </h6>
-                <h6 className="mb-1">
-                  <a
-                    href={`https://github.com/${sponsorable.username}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    profile page
-                  </a>
-                </h6>
+                <Card.Link
+                  href={`https://github.com/sponsors/${sponsorable.username}`}
+                >
+                  sponsors page
+                </Card.Link>
+                <Card.Link href={`https://github.com/${sponsorable.username}`}>
+                  profile page
+                </Card.Link>
               </Card.Footer>
             </Card>
           </Col>
