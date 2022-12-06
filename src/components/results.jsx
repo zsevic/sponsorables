@@ -15,7 +15,7 @@ export function Results({ sponsorables }) {
             sm={6}
             xs={12}
             key={sponsorable.username}
-            className="mb-3"
+            className="mb-3 d-flex"
           >
             <Card className="p-2">
               <Card.Header as="h5">{sponsorable.username}</Card.Header>
