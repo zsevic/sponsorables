@@ -18,7 +18,7 @@ export function Results({ sponsorables }) {
             className="mb-3"
           >
             <Card className="p-2">
-              <Card.Header>{sponsorable.username}</Card.Header>
+              <Card.Header as="h5">{sponsorable.username}</Card.Header>
               <Card.Body>
                 <Card.Text className="text-muted text-break">
                   {sponsorable.bio}
