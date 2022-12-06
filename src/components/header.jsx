@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export function Header() {
   return (
     <header>
       <p className="text-center text-muted mt-4 w-75 mx-auto">

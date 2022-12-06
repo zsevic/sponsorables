@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Loader } from "./loader";
 import { Results } from "./results";
 
-export default function SearchBar() {
+export function SearchBar() {
   const [sponsorables, setSponsorables] = useState([]);
   const [location, setLocation] = useState();
   const [errorMessage, setErrorMessage] = useState();
   const [showResponseText, setShowResponseText] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   const locationErrorMessage = "Location is required";
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -18,12 +22,21 @@ export default function SearchBar() {
         setShowResponseText(true);
         return;
       }
+      setIsLoading(true);
+      setSponsorables([]);
       const response = await fetch(
         `/api/sponsorables?location=${location}`
       ).then((res) => res.json());
-      setSponsorables(response.data);
+      setErrorMessage("");
+      const { data: responseData } = response;
+      setSponsorables(responseData);
+      if (responseData.length === 0) {
+        setShowResponseText(true);
+      }
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
       setErrorMessage("Failed to fetch the results");
       setShowResponseText(true);
     }
@@ -60,10 +73,13 @@ export default function SearchBar() {
         </div>
       </Form>
 
-      <Results sponsorables={sponsorables} />
-      <p className="text-center">
-        {showResponseText ? errorMessage || "There are no results" : ""}
-      </p>
+      {isLoading && <Loader />}
+      {!isLoading && <Results sponsorables={sponsorables} />}
+      {!isLoading && (
+        <p className="text-center">
+          {showResponseText ? errorMessage || "There are no results" : ""}
+        </p>
+      )}
     </>
   );
 }

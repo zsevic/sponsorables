@@ -19,13 +19,11 @@ export function Results({ sponsorables }) {
           >
             <Card className="p-2 w-100">
               <Card.Header as="h5">{sponsorable.username}</Card.Header>
-              {sponsorable.bio && (
-                <Card.Body>
-                  <Card.Text className="text-muted text-break">
-                    {sponsorable.bio}
-                  </Card.Text>
-                </Card.Body>
-              )}
+              <Card.Body>
+                <Card.Text className="text-muted text-break">
+                  {sponsorable.bio}
+                </Card.Text>
+              </Card.Body>
               <Card.Footer>
                 <Row>
                   <Col xs={12} className="text-center text-wrap mb-2">
