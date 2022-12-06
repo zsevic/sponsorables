@@ -2,6 +2,8 @@
 
 > Search Github sponsorables by location
 
+See demo: [sponsorables.vercel.app](https://sponsorables.vercel.app/)
+
 ### Setup
 
 ```bash
