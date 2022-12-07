@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header>
       <p className="text-center text-muted mt-4 w-75 mx-auto">
-        Search Github sponsorables by location
+        Find sponsorable Github profiles by location
       </p>
     </header>
   );

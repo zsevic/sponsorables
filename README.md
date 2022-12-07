@@ -1,6 +1,6 @@
 # sponsorables
 
-> Search Github sponsorables by location
+> Find sponsorable Github profiles by location
 
 See demo: [sponsorables.vercel.app](https://sponsorables.vercel.app/)
 
