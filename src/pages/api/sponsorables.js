@@ -1,4 +1,4 @@
-import { getSponsorables } from "services/github-api";
+import { getSponsorables } from "services/sponsorables";
 
 export default async function handler(req, res) {
   const { location } = req.query;
