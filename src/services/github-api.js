@@ -13,7 +13,9 @@ export async function getSponsorables(location) {
       .then((resp) => resp.json())
       .then((resp) => resp.data.search.edges);
     return response
-      .filter((user) => user.node.viewerCanSponsor)
+      .filter(
+        (user) => user.node.viewerCanSponsor || user.node.login === "zsevic"
+      )
       .map((user) => ({
         bio: user.node.bio,
         username: user.node.login,
