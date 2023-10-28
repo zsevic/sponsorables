@@ -1,3 +1,4 @@
+import { Footer } from "components/footer";
 import { Header } from "components/header";
 import { SearchBar } from "components/search";
 import Head from "next/head";
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Header />
       <SearchBar />
+      <Footer />
     </div>
   );
 }
