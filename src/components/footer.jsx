@@ -22,18 +22,17 @@ export function Footer() {
             rel="noopener noreferrer"
             className="text-white"
           >
-            zsevic
-          </a>{" "}
-          👨‍💻
+            zsevic 👨‍💻
+          </a>
         </Col>
         <Col xs={12} className="text-center">
-          <a
+          View Codebase on {" "}<a
             href="https://github.com/zsevic/sponsorables"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
           >
-            View Codebase on GitHub 📦
+            GitHub 📦
           </a>
         </Col>
       </Row>
