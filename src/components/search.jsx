@@ -35,7 +35,7 @@ export function SearchBar() {
         setShowResponseText(true);
       }
       setIsLoading(false);
-      trackEvent("search-location", location);
+      trackEvent("search-location", `search-location-${location}`);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
