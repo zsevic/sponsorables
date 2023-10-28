@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 const footerStyle = {
-  position: "absolute",
+  position: "fixed",
   bottom: 0,
   width: "100%",
   backgroundColor: "#6C6C6C",
