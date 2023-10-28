@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { trackEvent } from "utils/analytics";
 import { Loader } from "./loader";
 import { Results } from "./results";
-import { trackEvent } from "utils/analytics";
 
 export function SearchBar() {
   const [sponsorables, setSponsorables] = useState([]);
