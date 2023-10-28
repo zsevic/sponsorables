@@ -25,7 +25,7 @@ export function SearchBar() {
       setIsLoading(true);
       setSponsorables([]);
       const response = await fetch(
-        `/api/sponsorables?location=${location}`
+        `/api/sponsorables?location=${location}`,
       ).then((res) => res.json());
       setErrorMessage("");
       const { data: responseData } = response;

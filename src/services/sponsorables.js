@@ -5,7 +5,7 @@ export async function getSponsorables(location) {
     const response = await githubApi.getUsersBy(location);
     return response
       .filter(
-        (user) => user.node.viewerCanSponsor || user.node.login === "zsevic"
+        (user) => user.node.viewerCanSponsor || user.node.login === "zsevic",
       )
       .map((user) => ({
         bio: user.node.bio,

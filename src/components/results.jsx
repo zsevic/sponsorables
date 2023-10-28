@@ -59,7 +59,7 @@ Results.propTypes = {
     PropTypes.shape({
       bio: PropTypes.string.isRequired,
       username: PropTypes.string.isRequired,
-    })
+    }),
   ),
 };
 
