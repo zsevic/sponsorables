@@ -26,7 +26,8 @@ export function Footer() {
           </a>
         </Col>
         <Col xs={12} className="text-center">
-          View Codebase on {" "}<a
+          View Codebase on{" "}
+          <a
             href="https://github.com/zsevic/sponsorables"
             target="_blank"
             rel="noopener noreferrer"
