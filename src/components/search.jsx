@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Loader } from "./loader";
 import { Results } from "./results";
-import { trackEvent } from 'utils/analytics';
+import { trackEvent } from "utils/analytics";
 
 export function SearchBar() {
   const [sponsorables, setSponsorables] = useState([]);
@@ -35,7 +35,7 @@ export function SearchBar() {
         setShowResponseText(true);
       }
       setIsLoading(false);
-      trackEvent('search-location', location);
+      trackEvent("search-location", location);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
