@@ -10,5 +10,5 @@ export async function getUsersBy(location) {
     },
   })
     .then((resp) => resp.json())
-    .then((resp) => resp.data.search.edges);
+    .then((resp) => resp.data?.search?.edges || []);
 }
