@@ -28,7 +28,7 @@ export function Footer() {
         </Col>
         <Col xs={12} className="text-center">
           <a
-            href="https://github.com/zsevic/your-repo-name"
+            href="https://github.com/zsevic/sponsorables"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white"
