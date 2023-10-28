@@ -6,7 +6,7 @@ export function Results({ sponsorables }) {
   if (sponsorables.length === 0) return null;
 
   return (
-    <Container className="mb-3 w-75">
+    <Container className="mb-6 w-75">
       <Row>
         {sponsorables.map((sponsorable) => (
           <Col
