@@ -6,6 +6,7 @@ const footerStyle = {
   bottom: 0,
   width: "100%",
   backgroundColor: "#6C6C6C",
+  marginTop: "20px",
   color: "white",
   paddingBottom: "8px",
 };
