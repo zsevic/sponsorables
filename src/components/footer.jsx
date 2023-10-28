@@ -7,6 +7,7 @@ const footerStyle = {
   width: "100%",
   backgroundColor: "#6C6C6C",
   color: "white",
+  paddingBottom: "8px",
 };
 
 export function Footer() {
