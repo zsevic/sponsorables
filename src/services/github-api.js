@@ -2,7 +2,7 @@ export async function getUsersBy(location) {
   return fetch("https://api.github.com/graphql", {
     method: "POST",
     body: JSON.stringify({
-      query: `query { search(type:USER, query:"location:${location} followers:>40", first:100) { edges { node { ... on User { bio login viewerCanSponsor } } } userCount } }`,
+      query: `query { search(type:USER, query:"location:${location} is:sponsorable", first:100) { edges { node { ... on User { bio login viewerCanSponsor } } } userCount } }`,
     }),
     headers: {
       ContentType: "application/json",
