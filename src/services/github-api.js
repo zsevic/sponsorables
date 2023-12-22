@@ -15,7 +15,7 @@ export async function getUsersBy(location) {
           }
           userCount
         }
-      }`
+      }`,
     }),
     headers: {
       ContentType: "application/json",
