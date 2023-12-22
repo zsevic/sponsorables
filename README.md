@@ -4,6 +4,10 @@
 
 See demo: [sponsorables.vercel.app](https://sponsorables.vercel.app/)
 
+### Prerequisites
+
+- GitHub token (Settings &rarr; Developer Settings &rarr; Personal access tokens)
+
 ### Setup
 
 ```bash
